@@ -3,6 +3,7 @@ from pyglet.sprite import Sprite
 from pyglet.window import Window, mouse
 from resourses import *
 from drum_set import DrumSet
+from piano_board import PianoBoard
 
 # Variables
 is_visible = False
@@ -17,6 +18,7 @@ loading = Sprite(loading_img, batch=menu_batch)
 drums = Sprite(drums_img, batch=menu_batch)
 piano = Sprite(piano_img, batch=menu_batch)
 drum_set = DrumSet()
+piano_board = PianoBoard()
 
 
 loading.scale = 0.3
@@ -30,6 +32,7 @@ piano.position = 400 - (piano.width / 2), 20, 0
 drums.visible = False
 piano.visible = False
 drum_set.visible = False
+piano_board.visible = False
 
 
 def show_menu(dt):
@@ -51,12 +54,14 @@ def on_draw():
     background.draw()
     menu_batch.draw()
     drum_set.draw()
-
+    piano_board.draw()
 
 @game.event
 def on_key_press(symbol, modifier):
     if drum_set.visible:
         drum_set.key_press(symbol)
+    if piano_board.visible:
+        piano_board.key_press(symbol)
 
 
 @game.event
@@ -72,6 +77,7 @@ def on_mouse_motion(x, y, dx, dy):
         piano.scale = 1
 
 
+
 @game.event
 def on_mouse_press(x, y, button, modifiers):
     if button == mouse.LEFT:
@@ -82,8 +88,7 @@ def on_mouse_press(x, y, button, modifiers):
         if on_sprite(piano, x, y) and piano.visible:
             drums.visible = False
             piano.visible = False
-            print('piano_menu')
-            # piano_set.visible = True
+            piano_board.visible = True
 
 
 pyglet.clock.schedule_once(show_menu, 3)
