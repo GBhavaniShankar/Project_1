@@ -1,17 +1,15 @@
-import pyglet.graphics
 from pyglet.sprite import Sprite
 from pyglet.media import *
 from pyglet.window.key import *
-from resourses import piano_board_img, black_spot_img
-
+from resourses import piano_board_img
 
 
 def play_sound(sound_file):
     sound = load(sound_file)
     sound.play()
 
-class PianoBoard(Sprite):
 
+class PianoBoard(Sprite):
 
     def __init__(self):
         super().__init__(piano_board_img)
@@ -78,7 +76,6 @@ class PianoBoard(Sprite):
             ws.position = 660, 250, 0
             ws.visible = True
 
-
     def key_release(self, symbol, bl, ws):
         if symbol == Z:
             bl.visible = False
@@ -104,4 +101,3 @@ class PianoBoard(Sprite):
             ws.visible = False
         if symbol == J:
             ws.visible = False
-
