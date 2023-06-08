@@ -4,17 +4,17 @@ from pyglet.window.key import *
 from resourses import piano_board_img
 
 
-def play_sound(sound_file):
+def play_sound(sound_file):  # creating a function to load an audio file from its destination and play that track
     sound = load(sound_file)
     sound.play()
 
 
-class PianoBoard(Sprite):
+class PianoBoard(Sprite):  # creating a class so that we can play piano
 
     def __init__(self):
-        super().__init__(piano_board_img)
+        super().__init__(piano_board_img)  # putting the image of piano on background
 
-    def key_press(self, symbol, bl, ws):
+    def key_press(self, symbol, bl, ws):  # creating function that plays sounds and does animation on specific key press
         if symbol == Z:
             play_sound('assets/sfx/piano_sfx/Bo.mp3')
             bl.scale = 2.7
@@ -76,7 +76,7 @@ class PianoBoard(Sprite):
             ws.position = 660, 250, 0
             ws.visible = True
 
-    def key_release(self, symbol, bl, ws):
+    def key_release(self, symbol, bl, ws):  # assigning the work to fade off the animations that appear on key press
         if symbol == Z:
             bl.visible = False
         if symbol == X:

@@ -4,14 +4,14 @@ from pyglet.window.key import *
 from resourses import *
 
 
-def play_sound(sound_file):
+def play_sound(sound_file):  # creating a function to load an audio file from its destination and play that track
     sound = media.load(sound_file)
     sound.play()
 
 
-class Tabala:
+class Tabala:  # creating tabala set to play with tabala
 
-    def __init__(self):
+    def __init__(self):  # assigning coordinates for different sprites involved in this tabala set
         self.outer_tabala_1 = Sprite(outer_tabala_1_img, x=20, y=150, z=0)
         self.outer_tabala_2 = Sprite(outer_tabala_2_img, x=380, y=150, z=0)
         self.outer_tabala_2.scale = 1.2
@@ -23,7 +23,7 @@ class Tabala:
         self.inner_tabala_2.scale = 1.2
         self.tabala_visibility = False
 
-    def draw(self):
+    def draw(self):  # drawing all the components of the tabala
         self.outer_tabala_1.draw()
         self.outer_tabala_2.draw()
         self.middle_tabala_1.draw()
@@ -31,7 +31,8 @@ class Tabala:
         self.inner_tabala_1.draw()
         self.inner_tabala_2.draw()
 
-    def visibility(self, is_visible):
+    def visibility(self, is_visible):  # setting the visibility of all the components of the tabala, to same as that
+        # of the tabala class
         self.outer_tabala_1.visible = is_visible
         self.outer_tabala_2.visible = is_visible
         self.middle_tabala_1.visible = is_visible
@@ -40,7 +41,7 @@ class Tabala:
         self.inner_tabala_2.visible = is_visible
         self.tabala_visibility = is_visible
 
-    def on_key_press(self, symbol):
+    def on_key_press(self, symbol):  # to play certain sounds on pressing specific keys and do some custom animations
         if symbol == A:
             self.outer_tabala_1.position = 6, 133, 0
             self.outer_tabala_1.scale = 1.1
@@ -71,7 +72,7 @@ class Tabala:
             self.inner_tabala_2.scale = 1.3
             play_sound('assets/sfx/tabala_sfx/inner2.mp3')
 
-    def on_key_release(self, symbol):
+    def on_key_release(self, symbol):  # resets the tabala sprites to its default place
         if symbol == A:
             self.outer_tabala_1.scale = 1
             self.outer_tabala_1.position = 20, 150, 0
@@ -96,5 +97,5 @@ class Tabala:
             self.inner_tabala_2.y = 268
             self.inner_tabala_2.scale = 1.2
 
-    def is_visible(self):
+    def is_visible(self):  # setting the visibility of tabala set
         return self.tabala_visibility

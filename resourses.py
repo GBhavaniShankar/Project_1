@@ -1,5 +1,6 @@
 from pyglet.image import load, load_animation
 
+# loading all the images and animation from respective destinations
 background_img = load('assets/images/background.png')
 logo_img = load('assets/images/loading_page/logo.png')
 loading_img = load_animation('assets/images/loading_page/load.gif')
@@ -16,4 +17,4 @@ middle_tabala_1_img = load('assets/images/tabala/middle_tabala_1.png')
 middle_tabala_2_img = load('assets/images/tabala/middle_tabala_2.png')
 outer_tabala_1_img = load('assets/images/tabala/outer_tabala_1.png')
 outer_tabala_2_img = load('assets/images/tabala/outer_tabala_2.png')
-stick = load('assets/images/drum_set/stick.png')
+stick_img = load('assets/images/drum_set/stick.png')
