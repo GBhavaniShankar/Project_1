@@ -1,5 +1,5 @@
 # Musical Instruments using Pyglet
-**Musical instruments** is a project done by **Group F13**. This project involves playing music, where a player will be able to play musical instruments such as drum set, piano, tabala.
+**Musical instruments** is a project done by **Group F14**. This project involves playing music, where a player will be able to play musical instruments such as drum set, piano, tabala.
 
 **Group Details**
 
