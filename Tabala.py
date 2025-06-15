@@ -1,6 +1,6 @@
 from pyglet.sprite import Sprite
-from pyglet import *
-from pyglet.window.key import *
+from pyglet import media
+from pyglet.window.key import A, J, S, D, K, L
 from resourses import *
 
 

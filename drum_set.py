@@ -1,6 +1,6 @@
 from pyglet.sprite import Sprite
-from pyglet.media import *
-from pyglet.window.key import *
+from pyglet.media import load
+from pyglet.window.key import B, V, N, M, C, Z, X
 from resourses import drum_set_img, stick_img
 
 

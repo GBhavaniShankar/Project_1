@@ -1,6 +1,6 @@
 from pyglet.sprite import Sprite
-from pyglet.media import *
-from pyglet.window.key import *
+from pyglet.media import load
+from pyglet.window.key import Z, X, C, V, B, N, M, S, D, G, H, J
 from resourses import piano_board_img
 
 
