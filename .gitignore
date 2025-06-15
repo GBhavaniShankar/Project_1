@@ -1,0 +1,33 @@
+# Python compilation files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Project specific media exclusions
+# Include all asset files
+!assets/
+!assets/**/*
+!assets/images/**/*
+!assets/sfx/**/*
+
+# But ignore potential large media working files
+*.mp3
+*.wav
+*.ogg
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# IDE - VSCode
+.vscode/
+*.code-workspace
+
+# Environment
+venv/
+.env
+
+# System files
+.DS_Store
+Thumbs.db
